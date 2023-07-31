@@ -1,13 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 
+let listTodo=[];
 function App() {
-  const [count, setCount] = useState(0)
+  let inputValue="";
+  let [click, setClick]= useState("");
+  
+
+  const changeInputValue = (event)=> {
+     inputValue= event.target.value;
+  }
+  const displayList= ()=> {    
+    listTodo.push( <div>{inputValue}</div> );
+    console.log(listTodo);   
+    setClick(listTodo);
+  }
 
   return (
-    <div> Hi, My name is Huy</div>
+    
+    <div>
+      <div> 
+        <input onChange={changeInputValue} type="text" />
+        <button onClick={displayList}>Add list</button>
+      </div>
+
+        {console.log(click)}
+        {click}
+      
+    </div>
   )
 }
 
