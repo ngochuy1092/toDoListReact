@@ -1,33 +1,28 @@
 import { useState } from 'react'
-
+let a=0;
 let listTodo=[];
-function App() {
-  let inputValue="";
-  let [click, setClick]= useState("");
+export default function App() {
   
+  let inputValue="";
+  const [click, setClick]= useState([]);  
 
   const changeInputValue = (event)=> {
      inputValue= event.target.value;
   }
   const displayList= ()=> {    
-    listTodo.push( <div>{inputValue}</div> );
-    console.log(listTodo);   
-    setClick(listTodo);
+    listTodo.push("hi");     
+    setClick(listTodo);  
   }
-
-  return (
-    
+  a=a+1;
+  return (    
     <div>
       <div> 
         <input onChange={changeInputValue} type="text" />
-        <button onClick={displayList}>Add list</button>
-      </div>
-
-        {console.log(click)}
-        {click}
-      
+        <button onClick={displayList}>Add list</button>         
+      </div>    
+      {(console.log(a))}
+      {click}
+      {console.log(click)}          
     </div>
   )
-}
-
-export default App
+} 
