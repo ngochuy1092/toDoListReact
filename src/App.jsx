@@ -1,30 +1,14 @@
-import { useState } from 'react';
-
-function App() {
-  let inputValue;
-  const [todos, setTodos] = useState([]);
-
-  const changeInputValue = (event) => {
-  inputValue =(event.target.value);  };
-
-  const displayList = () => {   
-      setTodos(function a(previousTodos) { return( [...previousTodos, inputValue])});
-      // Clear the input after adding a todo    
-  };
-
+import { useState  } from "react";
+export default function App() {
+  const [a, setA]= useState(1);
+  const change= ()=> {
+    setA(2)
+  }
+  console.log('hi')
   return (
     <div>
-      <div>
-        <input value={inputValue} onChange={changeInputValue} type="text" />
-        <button onClick={displayList}>Add list</button>
-      </div>
-      <div>
-        {todos.map((todo, index) => (
-          <h1 key={index}>{todo}</h1>
-        ))}
-      </div>
+    <div>{a}</div>
+    <button onClick={change}>button</button>
     </div>
-  );
+  )
 }
-
-export default App;
