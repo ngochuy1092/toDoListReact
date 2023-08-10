@@ -2,7 +2,6 @@ import { useState , useEffect} from 'react';
 import {Display} from "./dipslay_task"
 
 
-
 export default function App() {  
   const [todos, setTodos] = useState([]);  
   const [ inputValue, setInputValue]= useState('');
